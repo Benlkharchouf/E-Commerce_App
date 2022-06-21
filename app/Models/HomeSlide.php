@@ -20,4 +20,3 @@ class HomeSlide extends Model
 
 
 }
- 

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('home_slide')->nullable();
             $table->string('video_url')->nullable();
             $table->timestamps();
-        }); 
+        });
     }
 
     /**
