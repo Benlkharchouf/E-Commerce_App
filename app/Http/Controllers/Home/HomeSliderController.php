@@ -14,8 +14,7 @@ class HomeSliderController extends Controller
         $homeslide = HomeSlide::find(1);
         return view('admin.home_slide.home_slide_all',compact('homeslide'));
 
-     } // End Method 
-
+     }
 
 
      public function UpdateSlider(Request $request){
@@ -35,9 +34,9 @@ class HomeSliderController extends Controller
                 'video_url' => $request->video_url,
                 'home_slide' => $save_url,
 
-            ]); 
+            ]);
             $notification = array(
-            'message' => 'Home Slide Updated with Image Successfully', 
+            'message' => 'Home Slide Updated with Image Successfully',
             'alert-type' => 'success'
         );
 
@@ -48,11 +47,11 @@ class HomeSliderController extends Controller
             HomeSlide::findOrFail($slide_id)->update([
                 'title' => $request->title,
                 'short_title' => $request->short_title,
-                'video_url' => $request->video_url,  
+                'video_url' => $request->video_url,
 
-            ]); 
+            ]);
             $notification = array(
-            'message' => 'Home Slide Updated without Image Successfully', 
+            'message' => 'Home Slide Updated without Image Successfully',
             'alert-type' => 'success'
         );
 
@@ -60,9 +59,8 @@ class HomeSliderController extends Controller
 
         } // end Else
 
-     } // End Method 
+     } // End Method
 
 
 
 }
- 
