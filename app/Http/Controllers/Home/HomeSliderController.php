@@ -14,8 +14,7 @@ class HomeSliderController extends Controller
         $homeslide = HomeSlide::find(1);
         return view('admin.home_slide.home_slide_all',compact('homeslide'));
 
-     }
-
+     } // End Method
 
      public function UpdateSlider(Request $request){
 
@@ -57,9 +56,9 @@ class HomeSliderController extends Controller
 
         return redirect()->back()->with($notification);
 
-        }
+        } // end Else
 
-     }
+     } // End Method
 
 
 

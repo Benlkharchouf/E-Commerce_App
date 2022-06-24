@@ -4,10 +4,15 @@
 @section('title')
 Home | EasyLearning Website
 @endsection
+    <!-- banner-area -->
     @include('frontend.home_all.home_slide')
+    <!-- banner-area-end -->
 
+    <!-- about-area -->
     @include('frontend.home_all.home_about')
+    <!-- about-area-end -->
 
+    <!-- services-area -->
     <section class="services">
     <div class="container">
     <div class="services__title__wrap">
@@ -137,8 +142,9 @@ Home | EasyLearning Website
     </div>
     </div>
     </section>
+    <!-- services-area-end -->
 
-
+    <!-- work-process-area -->
     <section class="work__process">
     <div class="container">
     <div class="row justify-content-center">
@@ -205,10 +211,15 @@ Home | EasyLearning Website
     </div>
     </div>
     </section>
+    <!-- work-process-area-end -->
 
+    <!-- portfolio-area -->
 
   @include('frontend.home_all.portfolio')
 
+    <!-- portfolio-area-end -->
+
+    <!-- partner-area -->
     <section class="partner">
     <div class="container">
     <div class="row align-items-center">
@@ -253,7 +264,9 @@ Home | EasyLearning Website
     </div>
     </div>
     </section>
+    <!-- partner-area-end -->
 
+    <!-- testimonial-area -->
     <section class="testimonial">
     <div class="container">
     <div class="row align-items-center justify-content-between">
@@ -304,9 +317,13 @@ Home | EasyLearning Website
                     </div>
                 </div>
             </section>
+            <!-- testimonial-area-end -->
 
+            <!-- blog-area -->
             @include('frontend.home_all.home_blog')
+            <!-- blog-area-end -->
 
+            <!-- contact-area -->
             <section class="homeContact">
                 <div class="container">
                     <div class="homeContact__wrap">
@@ -336,6 +353,6 @@ Home | EasyLearning Website
                     </div>
                 </div>
             </section>
-
+            <!-- contact-area-end -->
 
 @endsection
