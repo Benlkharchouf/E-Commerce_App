@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -14,6 +15,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('abouts', function (Blueprint $table) {
+
             $table->id();
             $table->string('title')->nullable();
             $table->string('short_title')->nullable();
@@ -21,7 +23,6 @@ return new class extends Migration
             $table->text('long_description')->nullable();
             $table->string('about_image')->nullable();
             $table->timestamps();
-
 
         });
     }
@@ -36,3 +37,5 @@ return new class extends Migration
         Schema::dropIfExists('abouts');
     }
 };
+
+
