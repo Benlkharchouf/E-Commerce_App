@@ -12,12 +12,11 @@ use Illuminate\Support\Carbon;
 class AboutController extends Controller
 {
     public function AboutPage(){
- 
+
         $aboutpage = About::find(1);
         return view('admin.about_page.about_page_all',compact('aboutpage'));
 
-     } // End Method 
-
+     }
 
 
  public function UpdateAbout(Request $request){
@@ -38,9 +37,9 @@ class AboutController extends Controller
                 'long_description' => $request->long_description,
                 'about_image' => $save_url,
 
-            ]); 
+            ]);
             $notification = array(
-            'message' => 'About Page Updated with Image Successfully', 
+            'message' => 'About Page Updated with Image Successfully',
             'alert-type' => 'success'
         );
 
@@ -54,34 +53,30 @@ class AboutController extends Controller
                 'short_description' => $request->short_description,
                 'long_description' => $request->long_description,
 
-            ]); 
+            ]);
             $notification = array(
-            'message' => 'About Page Updated without Image Successfully', 
+            'message' => 'About Page Updated without Image Successfully',
             'alert-type' => 'success'
         );
 
         return redirect()->back()->with($notification);
 
-        } // end Else
+        }
 
-     } // End Method 
-
+     }
 
      public function HomeAbout(){
 
         $aboutpage = About::find(1);
         return view('frontend.about_page',compact('aboutpage'));
 
-     }// End Method 
-
-
+     }
      public function AboutMultiImage(){
 
         return view('admin.about_page.multimage');
 
 
-     }// End Method 
-
+     }
 
      public function StoreMultiImage(Request $request){
 
@@ -95,24 +90,23 @@ class AboutController extends Controller
             $save_url = 'upload/multi/'.$name_gen;
 
             MultiImage::insert([
-                 
+
                 'multi_image' => $save_url,
                 'created_at' => Carbon::now()
 
-            ]); 
+            ]);
 
-             } // End of the froeach
-
+             }
 
             $notification = array(
-            'message' => 'Multi Image Inserted Successfully', 
+            'message' => 'Multi Image Inserted Successfully',
             'alert-type' => 'success'
         );
 
         return redirect()->route('all.multi.image')->with($notification);
-       
 
-     }// End Method 
+
+     }
 
 
      public function AllMultiImage(){
@@ -120,16 +114,14 @@ class AboutController extends Controller
         $allMultiImage = MultiImage::all();
         return view('admin.about_page.all_multiimage',compact('allMultiImage'));
 
-     }// End Method 
-
+     }
 
      public function EditMultiImage($id){
 
         $multiImage = MultiImage::findOrFail($id);
         return view('admin.about_page.edit_multi_image',compact('multiImage'));
 
-     }// End Method 
-
+     }
 
      public function UpdateMultiImage(Request $request){
 
@@ -143,13 +135,13 @@ class AboutController extends Controller
             $save_url = 'upload/multi/'.$name_gen;
 
             MultiImage::findOrFail($multi_image_id)->update([
-                 
+
                 'multi_image' => $save_url,
 
-            ]); 
+            ]);
 
             $notification = array(
-            'message' => 'Multi Image Updated Successfully', 
+            'message' => 'Multi Image Updated Successfully',
             'alert-type' => 'success'
         );
 
@@ -157,8 +149,7 @@ class AboutController extends Controller
 
         }
 
-     }// End Method 
-
+     }
 
      public function DeleteMultiImage($id){
 
@@ -169,16 +160,14 @@ class AboutController extends Controller
         MultiImage::findOrFail($id)->delete();
 
          $notification = array(
-            'message' => 'Multi Image Deleted Successfully', 
+            'message' => 'Multi Image Deleted Successfully',
             'alert-type' => 'success'
         );
 
         return redirect()->back()->with($notification);
 
-       
 
-     }// End Method 
 
+     }
 
 }
- 
