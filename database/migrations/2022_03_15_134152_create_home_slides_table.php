@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('home_slides', function (Blueprint $table) {
-            $table->id();
+            $table->id()->nullable();
             $table->string('title')->nullable();
             $table->string('short_title')->nullable();
             $table->string('home_slide')->nullable();
