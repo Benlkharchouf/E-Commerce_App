@@ -1,4 +1,4 @@
-  
+
 @php
 
 $route = Route::current()->getName();
@@ -27,11 +27,11 @@ $route = Route::current()->getName();
     <li><a href="services-details.html">Services</a></li>
 
     <li class="{{ ($route == 'home.portfolio') ? 'active' : '' }}"><a href="{{ route('home.portfolio') }}">Portfolio</a>
-         
-    </li>    
+
+    </li>
 
     <li class="{{ ($route == 'home.blog') ? 'active' : '' }}"><a href="{{ route('home.blog') }}">Our Blog</a>
-        
+
     </li>
     <li class="{{ ($route == 'contact.me') ? 'active' : '' }}"><a href="{{ route('contact.me') }}">contact me</a></li>
     </ul>
