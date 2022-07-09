@@ -44,8 +44,8 @@
                             <div class="services__details__content">
                                 <h2 class="title">{{ $portfolio->portfolio_title }}</h2>
                                 <p> {!! $portfolio->portfolio_description !!} </p>
-                                
-                                 
+
+
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -133,4 +133,4 @@
 
 
 
-@endsection
+@endsection 

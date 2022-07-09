@@ -11,7 +11,7 @@
         <div class="card-body">
 
             <h4 class="card-title">Protfolio Edit Page </h4>
-            
+
             <form method="post" action="{{ route('update.protfolio') }}" enctype="multipart/form-data">
                 @csrf
 
@@ -40,7 +40,7 @@
             </div>
             <!-- end row -->
 
- 
+
 
             <div class="row mb-3">
                 <label for="example-text-input" class="col-sm-2 col-form-label">Protfolio Description </label>
@@ -70,14 +70,14 @@
             <!-- end row -->
 <input type="submit" class="btn btn-info waves-effect waves-light" value="Update Protfolio Data">
             </form>
-             
-           
-           
+
+
+
         </div>
     </div>
 </div> <!-- end col -->
 </div>
- 
+
 
 
 </div>
@@ -95,7 +95,6 @@
             reader.readAsDataURL(e.target.files['0']);
         });
     });
-
 </script>
 
 @endsection 
