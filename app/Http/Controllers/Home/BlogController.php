@@ -28,9 +28,9 @@ class BlogController extends Controller
                 'blog_description' => $request->blog_description,
                 'blog_image' => $save_url,
                 'created_at' => Carbon::now(),
-            ]); 
+            ]);
             $notification = array(
-            'message' => 'Blog Inserted Successfully', 
+            'message' => 'Blog Inserted Successfully',
             'alert-type' => 'success'
         );
         return redirect()->route('all.blog')->with($notification);
@@ -53,9 +53,9 @@ class BlogController extends Controller
                 'blog_tags' => $request->blog_tags,
                 'blog_description' => $request->blog_description,
                 'blog_image' => $save_url,
-            ]); 
+            ]);
             $notification = array(
-            'message' => 'Blog Updated with Image Successfully', 
+            'message' => 'Blog Updated with Image Successfully',
             'alert-type' => 'success'
         );
         return redirect()->route('all.blog')->with($notification);
@@ -64,10 +64,10 @@ class BlogController extends Controller
                 'blog_category_id' => $request->blog_category_id,
                 'blog_title' => $request->blog_title,
                 'blog_tags' => $request->blog_tags,
-                'blog_description' => $request->blog_description, 
-            ]); 
+                'blog_description' => $request->blog_description,
+            ]);
             $notification = array(
-            'message' => 'Blog Updated without Image Successfully', 
+            'message' => 'Blog Updated without Image Successfully',
             'alert-type' => 'success'
         );
        return redirect()->route('all.blog')->with($notification);
@@ -79,17 +79,17 @@ public function DeleteBlog($id){
         unlink($img);
         Blog::findOrFail($id)->delete();
          $notification = array(
-            'message' => 'Blog Deleted Successfully', 
+            'message' => 'Blog Deleted Successfully',
             'alert-type' => 'success'
         );
-        return redirect()->back()->with($notification);       
-     } // End Method 
+        return redirect()->back()->with($notification);
+     } // End Method
      public function BlogDetails($id){
         $allblogs = Blog::latest()->limit(5)->get();
         $blogs = Blog::findOrFail($id);
         $categories = BlogCategory::orderBy('blog_category','ASC')->get();
         return view('frontend.blog_details',compact('blogs','allblogs','categories'));
-     } // End Method 
+     } // End Method
      public function CategoryBlog($id){
         $blogpost = Blog::where('blog_category_id',$id)->orderBy('id','DESC')->get();
         $allblogs = Blog::latest()->limit(5)->get();
@@ -97,7 +97,7 @@ public function DeleteBlog($id){
         $categoryname = BlogCategory::findOrFail($id);
         return view('frontend.cat_blog_details',compact('blogpost','allblogs','categories','categoryname'));
 
-     } // End Method 
+     } // End Method
 
      public function HomeBlog(){
 
@@ -105,9 +105,9 @@ public function DeleteBlog($id){
         $allblogs = Blog::latest()->get();
         return view('frontend.blog',compact('allblogs','categories'));
 
-     } // End Method 
+     } // End Method
 
 
 
 }
- 
+
