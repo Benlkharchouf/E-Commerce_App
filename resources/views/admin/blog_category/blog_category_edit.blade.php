@@ -47,4 +47,4 @@
 
 
 
-@endsection 
+@endsection
