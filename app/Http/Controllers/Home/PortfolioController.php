@@ -33,9 +33,9 @@ class PortfolioController extends Controller
                 'portfolio_description' => $request->portfolio_description,
                 'portfolio_image' => $save_url,
                 'created_at' => Carbon::now(),
-            ]); 
+            ]);
             $notification = array(
-            'message' => 'Portfolio Inserted Successfully', 
+            'message' => 'Portfolio Inserted Successfully',
             'alert-type' => 'success'
         );
         return redirect()->route('all.portfolio')->with($notification);
@@ -56,9 +56,9 @@ class PortfolioController extends Controller
                 'portfolio_title' => $request->portfolio_title,
                 'portfolio_description' => $request->portfolio_description,
                 'portfolio_image' => $save_url,
-            ]); 
+            ]);
             $notification = array(
-            'message' => 'Portfolio Updated with Image Successfully', 
+            'message' => 'Portfolio Updated with Image Successfully',
             'alert-type' => 'success'
         );
         return redirect()->route('all.portfolio')->with($notification);
@@ -67,33 +67,33 @@ class PortfolioController extends Controller
                 'portfolio_name' => $request->portfolio_name,
                 'portfolio_title' => $request->portfolio_title,
                 'portfolio_description' => $request->portfolio_description,
-                 
-            ]); 
+
+            ]);
             $notification = array(
-            'message' => 'Portfolio Updated without Image Successfully', 
+            'message' => 'Portfolio Updated without Image Successfully',
             'alert-type' => 'success'
         );
        return redirect()->route('all.portfolio')->with($notification);
         } // end Else
-     } // End Method 
+     } // End Method
      public function DeletePortfolio($id){
         $portfolio = Portfolio::findOrFail($id);
         $img = $portfolio->portfolio_image;
         unlink($img);
         Portfolio::findOrFail($id)->delete();
          $notification = array(
-            'message' => 'Portfolio Image Deleted Successfully', 
+            'message' => 'Portfolio Image Deleted Successfully',
             'alert-type' => 'success'
         );
-        return redirect()->back()->with($notification);       
-     }// End Method 
+        return redirect()->back()->with($notification);
+     }// End Method
 
 
      public function PortfolioDetails($id){
 
         $portfolio = Portfolio::findOrFail($id);
         return view('frontend.protfolio_details',compact('portfolio'));
-     }// End Method 
+     }// End Method
 
 
 }
