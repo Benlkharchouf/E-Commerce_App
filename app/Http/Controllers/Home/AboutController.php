@@ -165,9 +165,10 @@ class AboutController extends Controller
         );
 
         return redirect()->back()->with($notification);
+        echo 'hhhi';
 
-
-
+        echo 'hhhi';
      }
 
 }
+//tala3 leq had commeeeeeeeeeeeeeeentssh -T git@github.com

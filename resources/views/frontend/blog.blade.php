@@ -1,11 +1,7 @@
 @extends('frontend.main_master')
 @section('main')
 
-@section('title')
-Blog | EasyLearning Website
-@endsection
-
-<main> 
+<main>
 
             <!-- breadcrumb-area -->
             <section class="breadcrumb__wrap">
@@ -59,17 +55,23 @@ Blog | EasyLearning Website
         <p>{!! Str::limit($item->blog_description, 200) !!}  </p>
         <ul class="blog__post__meta">
             <li><i class="fal fa-calendar-alt"></i> {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</li>
-            
-            
+
+
         </ul>
     </div>
 </div>
                             @endforeach
 
 
-        <div class="pagination-wrap">
-            {{ $allblogs->links('vendor.pagination.custom') }}
-        </div>
+                            <div class="pagination-wrap">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <li class="page-item"><a class="page-link" href="#"><i class="far fa-long-arrow-left"></i></a></li>
+
+
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                         <div class="col-lg-4">
                             <aside class="blog__sidebar">
@@ -97,7 +99,7 @@ Blog | EasyLearning Website
                     </div>
                 </li>
                 @endforeach
-                                        
+
                                     </ul>
                                 </div>
 
@@ -193,4 +195,4 @@ Blog | EasyLearning Website
 
 
 
-@endsection
+@endsection 
