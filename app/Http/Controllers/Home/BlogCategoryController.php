@@ -23,15 +23,15 @@ class BlogCategoryController extends Controller
 
 
     public function StoreBlogCategory(Request $request){
-  
-         
-            BlogCategory::insert([
-                'blog_category' => $request->blog_category,               
 
-            ]); 
+
+            BlogCategory::insert([
+                'blog_category' => $request->blog_category,
+
+            ]);
 
             $notification = array(
-            'message' => 'Blog Category Inserted Successfully', 
+            'message' => 'Blog Category Inserted Successfully',
             'alert-type' => 'success'
         );
 
@@ -52,12 +52,12 @@ class BlogCategoryController extends Controller
     public function UpdateBlogCategory(Request $request,$id){
 
          BlogCategory::findOrFail($id)->update([
-                'blog_category' => $request->blog_category,               
+                'blog_category' => $request->blog_category,
 
-            ]); 
+            ]);
 
             $notification = array(
-            'message' => 'Blog Category Updated Successfully', 
+            'message' => 'Blog Category Updated Successfully',
             'alert-type' => 'success'
         );
 
@@ -70,15 +70,14 @@ class BlogCategoryController extends Controller
         BlogCategory::findOrFail($id)->delete();
 
          $notification = array(
-            'message' => 'Blog Category Deleted Successfully', 
+            'message' => 'Blog Category Deleted Successfully',
             'alert-type' => 'success'
         );
 
-        return redirect()->back()->with($notification);       
+        return redirect()->back()->with($notification);
 
     } // End Method
 
 
 
 }
- 
