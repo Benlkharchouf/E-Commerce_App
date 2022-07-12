@@ -227,5 +227,3 @@ class BlogController extends Controller
 
 
 
-
-

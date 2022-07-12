@@ -1,13 +1,5 @@
 @php
-
-
-
-
  $blogs = App\Models\Blog::latest()->limit(3)->get();
-
-
-
-
 @endphp
 
 
