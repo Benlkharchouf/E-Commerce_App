@@ -1,6 +1,7 @@
 @extends('frontend.main_master')
 @section('main')
 
+
 <main>
 
             <!-- breadcrumb-area -->
@@ -55,8 +56,8 @@
         <p>{!! Str::limit($item->blog_description, 200) !!}  </p>
         <ul class="blog__post__meta">
             <li><i class="fal fa-calendar-alt"></i> {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</li>
-            
-            
+
+
         </ul>
     </div>
 </div>
@@ -67,8 +68,8 @@
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination">
                                         <li class="page-item"><a class="page-link" href="#"><i class="far fa-long-arrow-left"></i></a></li>
-                                        
-                                        
+
+
                                     </ul>
                                 </nav>
                             </div>
@@ -99,7 +100,7 @@
                     </div>
                 </li>
                 @endforeach
-                                        
+
                                     </ul>
                                 </div>
 
