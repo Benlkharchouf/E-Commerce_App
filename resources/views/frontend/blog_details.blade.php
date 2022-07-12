@@ -47,8 +47,8 @@
         <div class="blog__details__content services__details__content">
             <ul class="blog__post__meta">
                 <li><i class="fal fa-calendar-alt"></i> {{ Carbon\Carbon::parse($blogs->created_at)->diffForHumans() }}</li>
-                 
-                 
+
+
             </ul>
             <h2 class="title">{{ $blogs->blog_title }}</h2>
             <p> {!! $blogs->blog_description !!} </p>
@@ -58,7 +58,7 @@
                 <li class="title">Tag:</li>
                 <li class="tags-list">
                     <a href="#">{{ $blogs->blog_tags }}</a>
-                  
+
                 </li>
             </ul>
             <ul class="blog__details__social">
@@ -232,7 +232,7 @@
                 </li>
                 @endforeach
 
-                
+
             </ul>
         </div>
         <div class="widget">
